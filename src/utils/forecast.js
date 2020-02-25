@@ -9,7 +9,7 @@ const forecast = (long, lat, callback) => {
         if(body.code === 400){
             callback('Location not found. Try another search', undefined)
         } else {
-            callback(undefined, body.currently.summary + '. It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + ' chance of rain')
+            callback(undefined, body.currently.summary + '. It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + ' chance of rain with humidity of ' + body.currently.humidity +'.')
         }
     })
     .catch(err => {
